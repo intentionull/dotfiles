@@ -42,13 +42,8 @@ return {
         which_key = true,
       },
     },
-  },
-
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin-latte",
-    },
+    config = function()
+      require("catppuccin").setup()
+    end,
   },
 }
