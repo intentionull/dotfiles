@@ -3,7 +3,7 @@ local config = {}
 local act = wezterm.action
 local mux = wezterm.mux
 
-config.color_scheme = "catppuccin-latte"
+config.color_scheme = "catppuccin-mocha"
 -- config.color_scheme = 'Gruvbox dark, medium (base16)'
 -- config.color_scheme = 'Everforest Dark (Gogh)'
 -- config.color_scheme = 'Tokyo Night'
@@ -137,8 +137,8 @@ config.keys = {
 }
 
 wezterm.on("gui-startup", function()
-  local tab, pane, window = mux.spawn_window(cmd or {})
-  window:gui_window():toggle_fullscreen()
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	window:gui_window():toggle_fullscreen()
 end)
 
 wezterm.max_fps = 144
