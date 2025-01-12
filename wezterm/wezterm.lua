@@ -43,10 +43,10 @@ config.switch_to_last_active_tab_when_closing_tab = true
 --     end
 --   end
 -- end)
-wezterm.on("gui-attached", function()
-	local tab, pane, window = mux.spawn_window(cmd or {})
-	window:gui_window():toggle_fullscreen()
-end)
+-- wezterm.on("gui-attached", function()
+-- 	local tab, pane, window = mux.spawn_window(cmd or {})
+-- 	window:gui_window():toggle_fullscreen()
+-- end)
 
 -- config.default_prog = { '/usr/local/bin/fish' }
 
@@ -136,11 +136,12 @@ config.keys = {
 	},
 }
 
-wezterm.on("gui-startup", function()
-	local tab, pane, window = mux.spawn_window(cmd or {})
-	window:gui_window():toggle_fullscreen()
-end)
+-- wezterm.on("gui-startup", function()
+-- 	local tab, pane, window = mux.spawn_window(cmd or {})
+-- 	window:gui_window():toggle_fullscreen()
+-- end)
 
-wezterm.max_fps = 144
+config.hide_tab_bar_if_only_one_tab = true
+config.max_fps = 144
 
 return config
