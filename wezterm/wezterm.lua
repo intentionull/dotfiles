@@ -3,8 +3,11 @@ local config = {}
 local act = wezterm.action
 local mux = wezterm.mux
 
-config.color_scheme = "catppuccin-mocha"
+-- config.color_scheme = "catppuccin-mocha"
 -- config.color_scheme = 'Gruvbox dark, medium (base16)'
+-- config.color_scheme = "Gruvbox Material (Gogh)"
+-- config.color_scheme = "Grayscale (light) (terminal.sexy)"
+config.color_scheme = "Github (base16)"
 -- config.color_scheme = 'Everforest Dark (Gogh)'
 -- config.color_scheme = 'Tokyo Night'
 -- config.color_scheme = 'Github Light (Gogh)'

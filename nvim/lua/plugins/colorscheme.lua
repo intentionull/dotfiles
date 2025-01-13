@@ -46,4 +46,67 @@ return {
       require("catppuccin").setup()
     end,
   },
+  -- {
+  --   "ribru17/bamboo.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require("bamboo").setup({
+  --       -- optional configuration here
+  --       style = "light",
+  --     })
+  --     require("bamboo").load()
+  --   end,
+  -- },
+  -- {
+  --   "sainnhe/everforest",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function() end,
+  -- },
+  -- {
+  --   "sainnhe/gruvbox-material",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function() end,
+  -- },
+  {
+    "yorickpeterse/nvim-grey",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- vim.cmd("colorscheme grey")
+    end,
+  },
+  {
+    "gmr458/cold.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- vim.cmd("colorscheme grey")
+    end,
+  },
+  -- {
+  --   "olimorris/onedarkpro.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     -- vim.opt.background = "light"
+  --     -- vim.cmd("colorscheme onelight")
+  --   end,
+  -- },
+  --
+  {
+    "projekt0n/github-nvim-theme",
+    name = "github-theme",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("github-theme").setup({
+        -- ...
+      })
+
+      vim.cmd("colorscheme github_dark")
+    end,
+  },
 }

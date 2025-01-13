@@ -17,7 +17,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "catppuccin-mocha" } },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins",
+      opts = { colorscheme = "github_light" },
+    },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -55,3 +59,10 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.formatting.prettier" },
   },
 })
+
+-- require("fzf-lua").setup({
+--   fzf_colors = {
+--     true,
+--     ["fg+"] = { "bg", { "CursorLine", "Normal" } },
+--   },
+-- })
