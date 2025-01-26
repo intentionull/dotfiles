@@ -19,15 +19,17 @@ config.color_scheme = "Github (base16)"
 -- }
 
 -- config.font = wezterm.font("Iosevka Nerd Font Mono", { weight = "Regular" })
--- config.font = wezterm.font 'ZedMono Nerd Font Mono'
-config.font = wezterm.font("0xProto Nerd Font Mono")
--- config.font = wezterm.font 'RecMonoSmCasual Nerd Font Mono'
--- config.font = wezterm.font 'fantasquesansm nerd font mono'
+-- config.font = wezterm.font("ZedMono Nerd Font Mono")
+-- config.font = wezterm.font("0xProto Nerd Font Mono")
+-- config.font = wezterm.font("RecMonoSmCasual Nerd Font Mono")
+-- config.font = wezterm.font("RecMonoLinear Nerd Font Mono")
+-- config.font = wezterm.font("fantasquesansm nerd font mono")
+config.font = wezterm.font("inconsolata nerd font mono")
 -- config.font = wezterm.font 'zedmono nerd font mono'
--- config.font = wezterm.font 'blexmono nerd font mono'
--- config.font = wezterm.font 'caskaydiamono nerd font mono'
-config.font_size = 14
-config.line_height = 1.1
+-- config.font = wezterm.font("blexmono nerd font mono")
+-- config.font = wezterm.font("caskaydiamono nerd font mono")
+config.font_size = 16
+config.line_height = 1.15
 config.window_padding = {
 	left = 0,
 	right = 0,
