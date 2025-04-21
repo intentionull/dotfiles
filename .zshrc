@@ -93,7 +93,7 @@ elif [[ `uname` == "Darwin" ]]; then
     esac
     # pnpm end
 
-    PATH=~/.console-ninja/.bin:$PATH
+    
 
     FPATH=~/.rbenv/completions:"$FPATH"
 
@@ -105,3 +105,22 @@ elif command kubectl > /dev/null; then
 else
     echo 'Unknown OS!'
 fi
+
+# bun completions
+[ -s "/Users/doitalldev/.bun/_bun" ] && source "/Users/doitalldev/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.local/bin/env"
+
+# pnpm
+export PNPM_HOME="/Users/doitalldev/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+PATH=~/.console-ninja/.bin:$PATH
