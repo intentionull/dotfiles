@@ -11,12 +11,12 @@ config.color_scheme = "catppuccin-latte"
 -- config.color_scheme = 'Everforest Dark (Gogh)'
 -- config.color_scheme = 'Tokyo Night'
 -- config.color_scheme = 'Github Light (Gogh)'
--- config.colors = {
---   background = "white",
---   tab_bar = {
---     background = 'white',
---   },
--- }
+config.colors = {
+	background = "white",
+	-- tab_bar = {
+	-- 	background = "white",
+	-- },
+}
 
 -- config.font = wezterm.font("Iosevka Nerd Font Mono", { weight = "Regular" })
 -- config.font = wezterm.font("ZedMono Nerd Font Mono")
