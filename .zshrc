@@ -49,7 +49,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zinit snippet OMZP::git
 
 alias ls='ls --color'
-alias nvim='nvim'
+# alias nvim='nvim'
 alias c='clear'
 
 # eval "$(fzf --zsh)"
@@ -134,3 +134,6 @@ export PATH=~/.npm-global/bin:$PATH
 
 # opencode
 export PATH=/Users/doitalldev/.opencode/bin:$PATH
+export PATH=$PATH:$HOME/.local/share/bob/nvim-bin
+
+
