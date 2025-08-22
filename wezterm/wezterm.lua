@@ -1,9 +1,10 @@
 local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
-local mux = wezterm.mux
+-- local mux = wezterm.mux
 
-config.color_scheme = "catppuccin-latte"
+-- config.color_scheme = "catppuccin-latte"
+config.color_scheme = "Catppuccin Latte"
 -- config.color_scheme = 'Gruvbox dark, medium (base16)'
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 -- config.color_scheme = "Grayscale (light) (terminal.sexy)"
@@ -11,29 +12,25 @@ config.color_scheme = "catppuccin-latte"
 -- config.color_scheme = 'Everforest Dark (Gogh)'
 -- config.color_scheme = 'Tokyo Night'
 -- config.color_scheme = 'Github Light (Gogh)'
-config.colors = {
-	background = "white",
-	-- tab_bar = {
-	-- 	background = "white",
-	-- },
-}
 
 -- config.font = wezterm.font("Iosevka Nerd Font Mono", { weight = "Regular" })
 -- config.font = wezterm.font("ZedMono Nerd Font Mono")
 -- config.font = wezterm.font("0xProto Nerd Font Mono")
 -- config.font = wezterm.font("RecMonoSmCasual Nerd Font Mono")
 -- config.font = wezterm.font("RecMonoLinear Nerd Font Mono")
--- config.font = wezterm.font("fantasquesansm nerd font mono")
+config.font = wezterm.font("fantasquesansm nerd font mono")
 -- config.font = wezterm.font("Inconsolata Nerd Font Mono")
 -- config.font = wezterm.font("Twilio Sans Mono")
 -- config.font = wezterm.font("DM Mono")
 -- config.font = wezterm.font("zedmono nerd font mono")
 -- config.font = wezterm.font("blexmono nerd font mono")
 -- config.font = wezterm.font("CommitMono Nerd Font Mono")
-config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
+-- config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
+-- config.font = wezterm.font("Zenbones Brainy")
+-- config.font = wezterm.font("Zenbones Mono")
 -- config.font = wezterm.font("MartianMono Nerd Font Mono")
 -- config.font = wezterm.font("caskaydiamono nerd font mono")
-config.font_size = 14
+config.font_size = 15
 config.line_height = 1
 config.window_padding = {
 	left = 0,
@@ -41,6 +38,11 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+
+config.freetype_load_flags = "NO_HINTING"
+config.window_background_opacity = 1.0
+config.enable_tab_bar = false
+config.bidi_enabled = true
 config.window_decorations = "RESIZE"
 config.switch_to_last_active_tab_when_closing_tab = true
 
@@ -154,4 +156,12 @@ config.keys = {
 config.hide_tab_bar_if_only_one_tab = true
 config.max_fps = 144
 
+config.term = "tmux-256color"
+
+config.colors = {
+	background = "#ffffff",
+	-- tab_bar = {
+	-- 	background = "white",
+	-- },
+}
 return config

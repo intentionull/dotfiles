@@ -64,3 +64,4 @@ require("lazy").setup({
 --     ["fg+"] = { "bg", { "CursorLine", "Normal" } },
 --   },
 -- })
+vim.cmd.colorscheme("catppuccin")

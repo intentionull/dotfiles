@@ -4,6 +4,7 @@ eval "$(oh-my-posh init zsh  --config ~/.config/ohmyposh/nightowl.omp.json)"
 # eval "$(oh-my-posh init zsh  --config ~/.config/ohmyposh/clean-detailed.omp.json)"
 fi
  # eval "$(oh-my-posh init zsh)"
+ #
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -43,7 +44,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z' fzf-preview 'ls --color $realpath'
+# zstyle ':fzf-tab:complete:__zoxide_z' fzf-preview 'ls --color $realpath'
 
 zinit snippet OMZP::git
 
@@ -53,7 +54,7 @@ alias c='clear'
 
 # eval "$(fzf --zsh)"
 source <(fzf --zsh)
-eval "$(zoxide init --cmd cd zsh)"
+# eval "$(zoxide init --cmd cd zsh)"
 autoload -Uz compinit && compinit
 zinit cdreplay -q
 # eval "$(starship init zsh)"
@@ -123,4 +124,13 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+export PATH=~/.npm-global/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 PATH=~/.console-ninja/.bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
+
+# opencode
+export PATH=/Users/doitalldev/.opencode/bin:$PATH
