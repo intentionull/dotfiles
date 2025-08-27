@@ -7,29 +7,20 @@ vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.signcolumn = "yes"
-vim.opt.winborder = "rounded"
+-- vim.opt.winborder = "rounded"
 
+
+
+require("config.lazy")
 
 -- Plugins
-vim.pack.add({
-	{ src = "https://github.com/neovim/nvim-lspconfig" },
-	{ src = "https://github.com/catppuccin/nvim" },
-	{ src = "https://github.com/echasnovski/mini.nvim" },
-	{ src = "https://github.com/stevearc/oil.nvim"},
-	{ src = "https://github.com/saghen/blink.cmp",                build = 'cargo +nightly build --release' },
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", branch = 'main',                         build = ":TSUpdate" }
-})
 
 -- Plugins Init
-require("mini.files").setup()
-require("mini.pick").setup()
-require("mini.icons").setup()
-require("oil").setup()
 
--- require "oil".setup()
+-- use a release tag to download pre-built binaries
 
 -- LSP
-vim.lsp.enable({ "lua_ls", "html", "prismals", "tailwindcss", "ts_ls", "nxls", "jsonls", "shopify_theme_ls" })
+-- vim.lsp.enable({ "lua_ls", "html", "prismals", "tailwindcss", "ts_ls", "nxls", "jsonls", "shopify_theme_ls" })
 
 -- Keymaps
 -----------------------------
@@ -39,9 +30,12 @@ vim.keymap.set("n", "<leader>so", ":update<CR> :source<CR>")
 -- File Ops
 vim.keymap.set("n", "<leader>fw", ":write<CR>")
 vim.keymap.set("n", "<leader>ff", ":Pick files<CR>")
+vim.keymap.set("n", "<leader>fg", ":Pick grep_live<CR>")
 vim.keymap.set("n", "<leader>fh", ":Pick help<CR>")
-vim.keymap.set("n", "<leader><leader>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-vim.keymap.set("n", "<leader>bd", "<CMD>bd<CR>")
+vim.keymap.set("n", "<leader><leader>", ":lua MiniFiles.open()<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader>bd", ":bd<CR>")
+
+vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>")
 
 -- LSP
 vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format)
@@ -51,38 +45,39 @@ vim.keymap.set("n", "<leader>ps", '<cmd>lua vim.pack.update()<CR>')
 
 -----------------------------
 
-require('blink.cmp').setup({
-	fuzzy = { implementation = 'prefer_rust_with_warning' },
-	signature = { enabled = true },
-	appearance = {
-		use_nvim_cmp_as_default = true,
-		nerd_font_variant = "normal",
-	},
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*",
+	callback = function(args)
+		require("conform").format({ bufnr = args.buf })
+	end,
+})
 
-	completion = {
-		documentation = {
-			auto_show = true,
-			auto_show_delay_ms = 0,
-		}
-	},
 
-	cmdline = {
-		keymap = {
-			preset = 'inherit',
-			['<CR>'] = { 'accept_and_enter', 'fallback' },
+vim.diagnostic.config({
+	virtual_lines = true,
+	-- virtual_text = true,
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
+	float = {
+		border = "rounded",
+		source = true,
+	},
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "󰅚 ",
+			[vim.diagnostic.severity.WARN] = "󰀪 ",
+			[vim.diagnostic.severity.INFO] = "󰋽 ",
+			[vim.diagnostic.severity.HINT] = "󰌶 ",
+		},
+		numhl = {
+			[vim.diagnostic.severity.ERROR] = "ErrorMsg",
+			[vim.diagnostic.severity.WARN] = "WarningMsg",
 		},
 	},
-	sources = { default = { "lsp" } }
 })
 
 
 
-
--- Colorscheme
-require "catppuccin".setup({
-	show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
-	transparent_background = true, -- disables setting the background color.
-	auto_integrations = true,
-})
 vim.cmd("colorscheme catppuccin-latte")
 vim.cmd(":hi statusline guibg=NONE")
