@@ -34,11 +34,13 @@ return {
 		-----------
 		-- SERVERS
 		require("lspconfig").html.setup({})
-		-- require("lspconfig").shopify_theme_ls.setup({})
+		require("lspconfig").shopify_theme_ls.setup({})
+		-- require("lspconfig").theme_check.setup({})
 		require("lspconfig").cssls.setup({})
 		require("lspconfig").jsonls.setup({})
-		-- require("lspconfig").tailwindcss.setup({})
+		require("lspconfig").tailwindcss.setup({})
 		require("lspconfig").ts_ls.setup({})
+		require("lspconfig").astro.setup({})
 		require("lspconfig").eslint.setup({
 			on_attach = function(client, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePre", {

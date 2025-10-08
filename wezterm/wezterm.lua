@@ -3,7 +3,6 @@ local config = {}
 local act = wezterm.action
 -- local mux = wezterm.mux
 
--- config.color_scheme = "catppuccin-latte"
 config.color_scheme = "Catppuccin Latte"
 -- config.color_scheme = 'Gruvbox dark, medium (base16)'
 -- config.color_scheme = "Gruvbox Material (Gogh)"
@@ -15,10 +14,11 @@ config.color_scheme = "Catppuccin Latte"
 
 -- config.font = wezterm.font("Iosevka Nerd Font Mono", { weight = "Regular" })
 -- config.font = wezterm.font("ZedMono Nerd Font Mono")
--- config.font = wezterm.font("0xProto Nerd Font Mono")
+config.font = wezterm.font("0xProto Nerd Font Mono")
 -- config.font = wezterm.font("RecMonoSmCasual Nerd Font Mono")
 -- config.font = wezterm.font("RecMonoLinear Nerd Font Mono")
-config.font = wezterm.font("fantasquesansm nerd font mono")
+-- config.font = wezterm.font("fantasquesansm nerd font mono")
+-- config.font = wezterm.font("caskaydiacove nerd font mono")
 -- config.font = wezterm.font("Inconsolata Nerd Font Mono")
 -- config.font = wezterm.font("Twilio Sans Mono")
 -- config.font = wezterm.font("DM Mono")
@@ -30,7 +30,8 @@ config.font = wezterm.font("fantasquesansm nerd font mono")
 -- config.font = wezterm.font("Zenbones Mono")
 -- config.font = wezterm.font("MartianMono Nerd Font Mono")
 -- config.font = wezterm.font("caskaydiamono nerd font mono")
-config.font_size = 15
+-- config.font = wezterm.font("geistmono nerd font mono")
+config.font_size = 14
 config.line_height = 1
 config.window_padding = {
 	left = 0,
@@ -158,10 +159,10 @@ config.max_fps = 144
 
 config.term = "tmux-256color"
 
-config.colors = {
-	background = "#ffffff",
-	-- tab_bar = {
-	-- 	background = "white",
-	-- },
-}
+-- config.colors = {
+-- 	background = "#ffffff",
+-- 	-- tab_bar = {
+-- 	-- 	background = "white",
+-- 	-- },
+-- }
 return config
