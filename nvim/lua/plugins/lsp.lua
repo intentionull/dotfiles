@@ -41,6 +41,7 @@ return {
 		require("lspconfig").tailwindcss.setup({})
 		require("lspconfig").ts_ls.setup({})
 		require("lspconfig").astro.setup({})
+		require("lspconfig").basedpyright.setup({})
 		require("lspconfig").eslint.setup({
 			on_attach = function(client, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePre", {
