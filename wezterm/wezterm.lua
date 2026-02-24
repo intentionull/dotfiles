@@ -12,9 +12,11 @@ config.color_scheme = "Catppuccin Latte"
 -- config.color_scheme = 'Tokyo Night'
 -- config.color_scheme = 'Github Light (Gogh)'
 
--- config.font = wezterm.font("Iosevka Nerd Font Mono", { weight = "Regular" })
+-- config.font = wezterm.font("Iosevka Nerd Font Mono")
+-- config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
+config.font = wezterm.font("Pragmasevka Nerd Font")
 -- config.font = wezterm.font("ZedMono Nerd Font Mono")
-config.font = wezterm.font("geistmono Nerd Font Mono")
+-- config.font = wezterm.font("geistmono Nerd Font Mono")
 -- config.font = wezterm.font("RecMonoSmCasual Nerd Font Mono")
 -- config.font = wezterm.font("RecMonoLinear Nerd Font Mono")
 -- config.font = wezterm.font("fantasquesansm nerd font mono")
@@ -27,11 +29,12 @@ config.font = wezterm.font("geistmono Nerd Font Mono")
 -- config.font = wezterm.font("CommitMono Nerd Font Mono")
 -- config.font = wezterm.font("JetBrainsMono Nerd Font Mono")
 -- config.font = wezterm.font("Zenbones Brainy")
+-- config.font = wezterm.font("Zenbones Proto")
 -- config.font = wezterm.font("Zenbones Mono")
 -- config.font = wezterm.font("MartianMono Nerd Font Mono")
 -- config.font = wezterm.font("caskaydiamono nerd font mono")
 -- config.font = wezterm.font("geistmono nerd font mono")
-config.font_size = 15
+config.font_size = 18
 config.line_height = 1
 config.window_padding = {
 	left = 0,
