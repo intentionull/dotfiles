@@ -137,3 +137,4 @@ export PATH=/Users/doitalldev/.opencode/bin:$PATH
 export PATH=$PATH:$HOME/.local/share/bob/nvim-bin
 
 
+export PATH="$HOME/go/bin:$PATH"
