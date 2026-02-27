@@ -1,0 +1,8 @@
+require('plugins.devicons')
+require("plugins.mason")
+require("plugins.lspconfig")
+require("plugins.blink")
+require('plugins.lazygit')
+require('plugins.gitsigns')
+require('plugins.treesitter')
+require("plugins.mini")
