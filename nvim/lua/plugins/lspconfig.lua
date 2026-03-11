@@ -4,6 +4,7 @@ vim.pack.add {
 vim.lsp.enable({
   "bashls",
   "gopls",
+  "gofumpt",
   "lua_ls",
   "ts_ls",
   'shopify_theme_ls',
@@ -17,11 +18,13 @@ vim.lsp.enable({
   'somesass_ls',
   'html',
   'sqlls',
-  'nxls'
+  'nxls',
+  'jsonls',
+  'stylua'
 })
 vim.diagnostic.config({ virtual_text = true })
 
-vim.lsp.on_type_formatting.enable()
+-- vim.lsp.on_type_formatting.enable()
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -30,5 +33,8 @@ vim.lsp.config('cssls', {
   capabilities = capabilities,
 })
 vim.lsp.config('html', {
+  capabilities = capabilities,
+})
+vim.lsp.config('jsonls', {
   capabilities = capabilities,
 })
