@@ -1,5 +1,1 @@
-vim.pack.add({
-	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
-})
-
-require("gitsigns")
+return { "https://github.com/lewis6991/gitsigns.nvim", opts = {} }

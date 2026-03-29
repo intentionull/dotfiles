@@ -1,8 +1,6 @@
 -- ============================================================================
 -- KEYMAPS
 -- ============================================================================
-vim.g.mapleader = " "      -- space for leader
-vim.g.maplocalleader = " " -- space for localleader
 
 -- better movement in wrapped text
 vim.keymap.set("n", "j", function()
