@@ -48,6 +48,10 @@
     "nvim-web-devicons": {
       "rev": "737cf6c657898d0c697311d79d361288a1343d50",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "opencode.nvim": {
+      "rev": "5067c80ee1f37b5f8a54244e184df44944175a84",
+      "src": "https://github.com/nickjvandyke/opencode.nvim"
     }
   }
 }

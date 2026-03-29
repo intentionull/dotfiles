@@ -14,12 +14,12 @@ config.color_scheme = "Catppuccin Latte"
 
 -- config.font = wezterm.font("Iosevka Nerd Font Mono")
 -- config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
-config.font = wezterm.font("Pragmasevka Nerd Font")
+-- config.font = wezterm.font("Pragmasevka Nerd Font")
 -- config.font = wezterm.font("ZedMono Nerd Font Mono")
 -- config.font = wezterm.font("geistmono Nerd Font Mono")
 -- config.font = wezterm.font("RecMonoSmCasual Nerd Font Mono")
 -- config.font = wezterm.font("RecMonoLinear Nerd Font Mono")
--- config.font = wezterm.font("fantasquesansm nerd font mono")
+config.font = wezterm.font("fantasquesansm nerd font mono")
 -- config.font = wezterm.font("caskaydiacove nerd font mono")
 -- config.font = wezterm.font("Inconsolata Nerd Font Mono")
 -- config.font = wezterm.font("Twilio Sans Mono")
@@ -34,7 +34,9 @@ config.font = wezterm.font("Pragmasevka Nerd Font")
 -- config.font = wezterm.font("MartianMono Nerd Font Mono")
 -- config.font = wezterm.font("caskaydiamono nerd font mono")
 -- config.font = wezterm.font("geistmono nerd font mono")
-config.font_size = 18
+-- config.font = wezterm.font("JetBrainsMono nerd font mono")
+config.cell_width = 1
+config.font_size = 16
 config.line_height = 1
 config.window_padding = {
 	left = 0,
@@ -150,6 +152,21 @@ config.keys = {
 			end),
 		}),
 	},
+  {
+    key = 'R',
+    mods = 'CMD|SHIFT',
+    action = act.PromptInputLine {
+      description = 'Enter new name for tab',
+      action = wezterm.action_callback(function(window, pane, line)
+        -- line will be `nil` if they hit escape without entering anything
+        -- An empty string if they just hit enter
+        -- Or the actual line of text they wrote
+        if line then
+          window:active_tab():set_title(line)
+        end
+      end),
+    },
+  },
 }
 
 -- wezterm.on("gui-startup", function()

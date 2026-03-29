@@ -12,7 +12,7 @@ require("catppuccin").setup({
 
 vim.cmd("colorscheme catppuccin")
 
+require("plugins")
 require("config")
 require("lsp")
-require("plugins")
 

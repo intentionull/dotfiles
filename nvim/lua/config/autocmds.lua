@@ -4,7 +4,6 @@
 
 local augroup = vim.api.nvim_create_augroup("UserConfig", { clear = true })
 
-
 -- highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = augroup,
@@ -45,8 +44,36 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '<filetype>' },
-  callback = function() vim.treesitter.start() end,
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {
+		"go",
+		"templ",
+		"liquid",
+		"lua",
+		"liquid",
+		"yaml",
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact",
+	},
+	callback = function()
+		vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		vim.wo[0][0].foldmethod = "expr"
+		vim.treesitter.start()
+	end,
 })
+
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = 'templ',
+--   callback = function()
+--     vim.treesitter.start()
+--   end,
+-- })
+--
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = 'go',
+--   callback = function()
+--     vim.treesitter.start()
+--   end,
+-- })

@@ -58,11 +58,11 @@ vim.keymap.set("n", "<Leader>fo", ":lua vim.lsp.buf.format()<CR>", s) -- Format 
 -- Mini Files
 -- vim.keymap.set("n", "<leader>fe", ":lua MiniFiles.open()<CR>", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>fe", function()
-      local buf_name = vim.api.nvim_buf_get_name(0)
-      local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
-      MiniFiles.open(path)
-      MiniFiles.reveal_cwd()
-    end, { desc = "Open Mini Files" })
+  local buf_name = vim.api.nvim_buf_get_name(0)
+  local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
+  MiniFiles.open(path)
+  MiniFiles.reveal_cwd()
+end, { desc = "Open Mini Files" })
 
 -- Mini Pick
 vim.keymap.set("n", "<leader>ff", ":Pick files<CR>", { desc = "Split window vertically" })
@@ -87,3 +87,23 @@ vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 
 -- vim.keymap.set("n", "<leader>ff", '<cmd>FzfLua files<CR>')
 -- vim.keymap.set("n", "<leader>fg", '<cmd>FzfLua live_grep<CR>')
+--
+--
+vim.keymap.set({ "n", "x" }, "<leader>aa", function() require("opencode").ask("@this: ", { submit = true }) end,
+  { desc = "Ask opencode…" })
+vim.keymap.set({ "n", "x" }, "<leader>ax", function() require("opencode").select() end, { desc = "Execute opencode action…" })
+vim.keymap.set({ "n", "t" }, "<leader>ao", function() require("opencode").toggle() end, { desc = "Toggle opencode" })
+
+vim.keymap.set({ "n", "x" }, "<leader>ag", function() return require("opencode").operator("@this ") end,
+  { desc = "Add range to opencode", expr = true })
+-- vim.keymap.set("n", "goo", function() return require("opencode").operator("@this ") .. "_" end,
+--   { desc = "Add line to opencode", expr = true })
+
+-- vim.keymap.set("n", "<S-C-u>", function() require("opencode").command("session.half.page.up") end,
+--   { desc = "Scroll opencode up" })
+-- vim.keymap.set("n", "<S-C-d>", function() require("opencode").command("session.half.page.down") end,
+--   { desc = "Scroll opencode down" })
+
+-- You may want these if you use the opinionated `<C-a>` and `<C-x>` keymaps above — otherwise consider `<leader>o…` (and remove terminal mode from the `toggle` keymap)
+-- vim.keymap.set("n", "+", "<C-a>", { desc = "Increment under cursor", noremap = true })
+-- vim.keymap.set("n", "-", "<C-x>", { desc = "Decrement under cursor", noremap = true })
